@@ -41,10 +41,10 @@
             margin-bottom: 15px;
         }
         .urinal {
-            width: 60px;
-            height: 100px;
+            width: 25px;
+            height: 35px;
             background-color: white;
-            margin: 0 5px;
+            margin: 0 20px;
             border: 2px solid #333;
             border-radius: 3px;
             position: relative;
@@ -60,22 +60,24 @@
             opacity: 0.5;
             cursor: not-allowed;
         }
+        .urinal.kids {
+            height: 30px;
+            margin-top: 5px;
+        }
         .person {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
             pointer-events: none;
         }
         .stick-figure {
-            width: 20px;
-            height: 40px;
             position: relative;
+            width: 30px;
+            height: 50px;
         }
         .head {
             width: 10px;
@@ -84,7 +86,7 @@
             border-radius: 50%;
             position: absolute;
             top: 0;
-            left: 5px;
+            left: 10px;
         }
         .body {
             width: 2px;
@@ -92,42 +94,42 @@
             background-color: black;
             position: absolute;
             top: 10px;
-            left: 9px;
+            left: 14px;
         }
         .arm-left {
-            width: 8px;
+            width: 10px;
             height: 2px;
             background-color: black;
             position: absolute;
             top: 15px;
-            left: 2px;
+            left: 5px;
             transform: rotate(30deg);
         }
         .arm-right {
-            width: 8px;
+            width: 10px;
             height: 2px;
             background-color: black;
             position: absolute;
             top: 15px;
-            left: 10px;
+            left: 15px;
             transform: rotate(-30deg);
         }
         .leg-left {
             width: 2px;
-            height: 10px;
+            height: 15px;
             background-color: black;
             position: absolute;
             top: 30px;
-            left: 7px;
+            left: 10px;
             transform: rotate(15deg);
         }
         .leg-right {
             width: 2px;
-            height: 10px;
+            height: 15px;
             background-color: black;
             position: absolute;
             top: 30px;
-            left: 11px;
+            left: 18px;
             transform: rotate(-15deg);
         }
         .cowboy-hat {
@@ -136,7 +138,7 @@
             background-color: #8B4513;
             position: absolute;
             top: -5px;
-            left: 3px;
+            left: 8px;
         }
         .baseball-cap {
             width: 12px;
@@ -144,7 +146,7 @@
             background-color: #1E90FF;
             position: absolute;
             top: -4px;
-            left: 3px;
+            left: 9px;
             border-radius: 4px 4px 0 0;
         }
         .spiky-hair {
@@ -152,7 +154,7 @@
             height: 3px;
             position: absolute;
             top: -3px;
-            left: 5px;
+            left: 10px;
         }
         .spiky-hair:before {
             content: "";
@@ -292,7 +294,7 @@
 
     <!-- Scenario 1: 4 urinals, one occupied (second position) -->
     <div class="scenario active" id="scenario1">
-        <div class="title">Scenario 1 of 5</div>
+        <div class="title">Scenario 1 of 6</div>
         <div class="urinals-container">
             <div class="urinal" id="s1u1" onclick="selectUrinal(1, 1, this)"></div>
             <div class="urinal">
@@ -318,7 +320,7 @@
 
     <!-- Scenario 2: 5 urinals, three occupied (positions 2, 4, 5) -->
     <div class="scenario" id="scenario2">
-        <div class="title">Scenario 2 of 5</div>
+        <div class="title">Scenario 2 of 6</div>
         <div class="urinals-container">
             <div class="urinal" id="s2u1" onclick="selectUrinal(2, 1, this)"></div>
             <div class="urinal">
@@ -369,7 +371,7 @@
 
     <!-- Scenario 3: 3 urinals, one occupied (position 3) -->
     <div class="scenario" id="scenario3">
-        <div class="title">Scenario 3 of 5</div>
+        <div class="title">Scenario 3 of 6</div>
         <div class="urinals-container">
             <div class="urinal" id="s3u1" onclick="selectUrinal(3, 1, this)"></div>
             <div class="urinal" id="s3u2" onclick="selectUrinal(3, 2, this)"></div>
@@ -394,7 +396,7 @@
 
     <!-- Scenario 4: 6 urinals, four occupied (positions 1, 3, 5, 6) -->
     <div class="scenario" id="scenario4">
-        <div class="title">Scenario 4 of 5</div>
+        <div class="title">Scenario 4 of 6</div>
         <div class="urinals-container">
             <div class="urinal">
                 <div class="person">
@@ -456,8 +458,59 @@
         <button class="next-button" id="next4" onclick="nextScenario(4)">Next Scenario</button>
     </div>
 
-    <!-- Final Scenario: 3 urinals, left and middle occupied -->
+    <!-- NEW Scenario 5: 5 urinals, middle three occupied, position 1 is a kids urinal -->
     <div class="scenario" id="scenario5">
+        <div class="title">Scenario 5 of 6</div>
+        <div class="urinals-container">
+            <div class="urinal kids" id="s5u1" onclick="selectUrinal(5, 1, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="baseball-cap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="cowboy-hat"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="spiky-hair"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s5u5" onclick="selectUrinal(5, 5, this)"></div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 5 urinals, three occupied (Position 1 is a kid's urinal)</div>
+        <button class="next-button" id="next5" onclick="nextScenario(5)">Next Scenario</button>
+    </div>
+
+    <!-- Final Scenario: 3 urinals, left and middle occupied -->
+    <div class="scenario" id="scenario6">
         <div class="title">Final Scenario: The Ultimate Test</div>
         <div class="urinals-container" style="position: relative;">
             <div class="urinal">
@@ -486,7 +539,7 @@
                     </div>
                 </div>
             </div>
-            <div class="urinal" id="s5u3" onclick="selectUrinal(5, 3, this)"></div>
+            <div class="urinal" id="s6u3" onclick="selectUrinal(6, 3, this)"></div>
             <div class="wrong-popup" id="wrongPopup">
                 <div class="wrong-title">WRONG!</div>
                 <div>HOLD IT!</div>
@@ -497,7 +550,7 @@
         <div class="wait-option">
             <button class="wait-button" id="waitButton" onclick="selectWait(this)">I'll wait outside</button>
         </div>
-        <button class="next-button" id="next5" onclick="showResults()">See Results</button>
+        <button class="next-button" id="next6" onclick="showResults()">See Results</button>
     </div>
 
     <!-- Results Screen -->
@@ -512,158 +565,587 @@
     <script>
         let currentScenario = 1;
         let score = 0;
-        let scenario5Answered = false;
-        let scenario5Locked = false;
+        let scenario6Answered = false;
+        let scenario6Locked = false;
+        
+        const answers = {
+            1: {1: 2, 3: 0, 4: 5}, // Scenario 1 scoring
+            2: {1: 5, 3: 0},       // Scenario 2 scoring
+            3: {1: 5, 2: -4},      // Scenario 3 scoring (position 2 is -4)
+            4: {2: 5, 4<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urinal Etiquette Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .scenario {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: none;
+        }
+        .scenario.active {
+            display: block;
+        }
+        .title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .urinals-container {
+            display: flex;
+            justify-content: center;
+            background-color: #e6e6e6;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .urinal {
+            width: 25px;
+            height: 35px;
+            background-color: white;
+            margin: 0 20px;
+            border: 2px solid #333;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .urinal.selected {
+            background-color: #e0f7fa;
+            border-color: #00bcd4;
+            box-shadow: 0 0 5px #00bcd4;
+        }
+        .urinal.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .urinal.kids {
+            height: 30px;
+            margin-top: 5px;
+        }
+        .person {
+            position: absolute;
+            bottom: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+        }
+        .stick-figure {
+            position: relative;
+            width: 30px;
+            height: 50px;
+        }
+        .head {
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+        .body {
+            width: 2px;
+            height: 20px;
+            background-color: black;
+            position: absolute;
+            top: 10px;
+            left: 14px;
+        }
+        .arm-left {
+            width: 10px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            transform: rotate(30deg);
+        }
+        .arm-right {
+            width: 10px;
+            height: 2px;
+            background-color: black;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            transform: rotate(-30deg);
+        }
+        .leg-left {
+            width: 2px;
+            height: 15px;
+            background-color: black;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            transform: rotate(15deg);
+        }
+        .leg-right {
+            width: 2px;
+            height: 15px;
+            background-color: black;
+            position: absolute;
+            top: 30px;
+            left: 18px;
+            transform: rotate(-15deg);
+        }
+        .cowboy-hat {
+            width: 14px;
+            height: 5px;
+            background-color: #8B4513;
+            position: absolute;
+            top: -5px;
+            left: 8px;
+        }
+        .baseball-cap {
+            width: 12px;
+            height: 4px;
+            background-color: #1E90FF;
+            position: absolute;
+            top: -4px;
+            left: 9px;
+            border-radius: 4px 4px 0 0;
+        }
+        .spiky-hair {
+            width: 10px;
+            height: 3px;
+            position: absolute;
+            top: -3px;
+            left: 10px;
+        }
+        .spiky-hair:before {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 4px;
+            background-color: black;
+            left: 0;
+            top: -3px;
+        }
+        .spiky-hair:after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 4px;
+            background-color: black;
+            right: 0;
+            top: -3px;
+        }
+        .instruction {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .description {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .wrong-popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff6666;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid #990000;
+            text-align: center;
+            display: none;
+            z-index: 100;
+        }
+        .wrong-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .results-button {
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .results {
+            display: none;
+            text-align: center;
+        }
+        .results.active {
+            display: block;
+        }
+        .score {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .rating {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .description {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .replay-button {
+            display: block;
+            width: 150px;
+            height: 40px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .next-button {
+            display: none;
+            width: 150px;
+            height: 40px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .wait-option {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .wait-button {
+            background-color: #f9f6f0;
+            color: #666;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .wait-button.selected {
+            background-color: #e0f7fa;
+            border-color: #00bcd4;
+            color: #00838f;
+        }
+        .wait-button.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>The Urinal Etiquette Test</h1>
+        <p>Choose your urinal wisely...</p>
+    </div>
+
+    <!-- Scenario 1: 4 urinals, one occupied (second position) -->
+    <div class="scenario active" id="scenario1">
+        <div class="title">Scenario 1 of 6</div>
+        <div class="urinals-container">
+            <div class="urinal" id="s1u1" onclick="selectUrinal(1, 1, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="cowboy-hat"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s1u3" onclick="selectUrinal(1, 3, this)"></div>
+            <div class="urinal" id="s1u4" onclick="selectUrinal(1, 4, this)"></div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 4 urinals, one occupied</div>
+        <button class="next-button" id="next1" onclick="nextScenario(1)">Next Scenario</button>
+    </div>
+
+    <!-- Scenario 2: 5 urinals, three occupied (positions 2, 4, 5) -->
+    <div class="scenario" id="scenario2">
+        <div class="title">Scenario 2 of 6</div>
+        <div class="urinals-container">
+            <div class="urinal" id="s2u1" onclick="selectUrinal(2, 1, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="baseball-cap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s2u3" onclick="selectUrinal(2, 3, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="spiky-hair"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="cowboy-hat"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 5 urinals, three occupied</div>
+        <button class="next-button" id="next2" onclick="nextScenario(2)">Next Scenario</button>
+    </div>
+
+    <!-- Scenario 3: 3 urinals, one occupied (position 3) -->
+    <div class="scenario" id="scenario3">
+        <div class="title">Scenario 3 of 6</div>
+        <div class="urinals-container">
+            <div class="urinal" id="s3u1" onclick="selectUrinal(3, 1, this)"></div>
+            <div class="urinal" id="s3u2" onclick="selectUrinal(3, 2, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="cowboy-hat"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 3 urinals, one occupied</div>
+        <button class="next-button" id="next3" onclick="nextScenario(3)">Next Scenario</button>
+    </div>
+
+    <!-- Scenario 4: 6 urinals, four occupied (positions 1, 3, 5, 6) -->
+    <div class="scenario" id="scenario4">
+        <div class="title">Scenario 4 of 6</div>
+        <div class="urinals-container">
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="baseball-cap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s4u2" onclick="selectUrinal(4, 2, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="spiky-hair"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s4u4" onclick="selectUrinal(4, 4, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="cowboy-hat"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="baseball-cap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 6 urinals, four occupied</div>
+        <button class="next-button" id="next4" onclick="nextScenario(4)">Next Scenario</button>
+    </div>
+
+    <!-- NEW Scenario 5: 5 urinals, middle three occupied, position 1 is a kids urinal -->
+    <div class="scenario" id="scenario5">
+        <div class="title">Scenario 5 of 6</div>
+        <div class="urinals-container">
+            <div class="urinal kids" id="s5u1" onclick="selectUrinal(5, 1, this)"></div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="baseball-cap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="cowboy-hat"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="spiky-hair"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s5u5" onclick="selectUrinal(5, 5, this)"></div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 5 urinals, three occupied (Position 1 is a kid's urinal)</div>
+        <button class="next-button" id="next5" onclick="nextScenario(5)">Next Scenario</button>
+    </div>
+
+    <!-- Final Scenario: 3 urinals, left and middle occupied -->
+    <div class="scenario" id="scenario6">
+        <div class="title">Final Scenario: The Ultimate Test</div>
+        <div class="urinals-container" style="position: relative;">
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="baseball-cap"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal">
+                <div class="person">
+                    <div class="stick-figure">
+                        <div class="head"></div>
+                        <div class="body"></div>
+                        <div class="arm-left"></div>
+                        <div class="arm-right"></div>
+                        <div class="leg-left"></div>
+                        <div class="leg-right"></div>
+                        <div class="spiky-hair"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="urinal" id="s6u3" onclick="selectUrinal(6, 3, this)"></div>
+            <div class="wrong-popup" id="wrongPopup">
+                <div class="wrong-title">WRONG!</div>
+                <div>HOLD IT!</div>
+            </div>
+        </div>
+        <div class="instruction">Tap the urinal you would choose</div>
+        <div class="description">Scenario: 3 urinals, two occupied</div>
+        <div class="wait-option">
+            <button class="wait-button" id="waitButton" onclick="selectWait(this)">I'll wait outside</button>
+        </div>
+        <button class="next-button" id="next6" onclick="showResults()">See Results</button>
+    </div>
+
+    <!-- Results Screen -->
+    <div class="results" id="results">
+        <h2>Your Urinal Etiquette Score</h2>
+        <div class="score" id="score"></div>
+        <div class="rating" id="rating"></div>
+        <div class="description" id="rating-description"></div>
+        <button class="replay-button" onclick="resetQuiz()">Try Again</button>
+    </div>
+
+    <script>
+        let currentScenario = 1;
+        let score = 0;
+        let finalScenarioAnswered = false;
+        let finalScenarioLocked = false;
         
         const answers = {
             1: {1: 2, 3: 0, 4: 5}, // Scenario 1 scoring
             2: {1: 5, 3: 0},       // Scenario 2 scoring
             3: {1: 5, 2: -4},      // Scenario 3 scoring (position 2 is -4)
             4: {2: 5, 4: 3},       // Scenario 4 scoring
-            5: {3: 0, wait: 5}     // Scenario 5 scoring
-        };
-
-        // Clear any previously selected urinals in each scenario
-        function clearSelections(scenario) {
-            const scenarioDiv = document.getElementById(`scenario${scenario}`);
-            const urinals = scenarioDiv.querySelectorAll('.urinal');
-            urinals.forEach(urinal => {
-                if (!urinal.querySelector('.person')) {
-                    urinal.classList.remove('selected');
-                }
-            });
-            
-            if (scenario === 5) {
-                document.getElementById('waitButton').classList.remove('selected');
-            }
-        }
-
-        function selectUrinal(scenario, position, element) {
-            // For scenario 5, lock in choice if position 3 is selected
-            if (scenario === 5) {
-                if (scenario5Locked) return;
-                
-                scenario5Answered = true;
-                scenario5Locked = true;
-                
-                // Disable wait button
-                const waitButton = document.getElementById('waitButton');
-                waitButton.classList.add('disabled');
-                waitButton.disabled = true;
-            } else {
-                clearSelections(scenario);
-            }
-            
-            // Add selected class to the clicked urinal
-            if (element) {
-                element.classList.add('selected');
-            }
-            
-            const points = answers[scenario][position] || 0;
-            score += points;
-            
-            document.getElementById(`next${scenario}`).style.display = 'block';
-            
-            if (scenario === 5 && position === 3) {
-                showWrong();
-            }
-        }
-
-        function selectWait(element) {
-            if (scenario5Locked) return;
-            
-            clearSelections(5);
-            
-            if (element) {
-                element.classList.add('selected');
-            }
-            
-            score += answers[5]['wait'];
-            document.getElementById('next5').style.display = 'block';
-            scenario5Answered = true;
-            
-            // Disable the urinal option
-            const urinal = document.getElementById('s5u3');
-            urinal.classList.add('disabled');
-            urinal.onclick = null;
-        }
-
-        function showWrong() {
-            document.getElementById('wrongPopup').style.display = 'block';
-            setTimeout(function() {
-                document.getElementById('wrongPopup').style.display = 'none';
-            }, 1500);
-        }
-
-        function nextScenario(current) {
-            document.getElementById(`scenario${current}`).classList.remove('active');
-            document.getElementById(`scenario${current+1}`).classList.add('active');
-            currentScenario++;
-        }
-
-        function showResults() {
-            if (scenario5Answered) {
-                document.getElementById('scenario5').classList.remove('active');
-                document.getElementById('results').classList.add('active');
-                
-                // Ensure score doesn't go below 0 for display purposes
-                const displayScore = Math.max(0, score);
-                document.getElementById('score').textContent = `${displayScore}/25 points`;
-                
-                let rating, description;
-                if (score >= 20) {
-                    rating = "Gentleman";
-                    description = "You understand urinal etiquette perfectly. A true gentleman of the men's room.";
-                } else if (score >= 15) {
-                    rating = "Normal Guy";
-                    description = "You generally follow urinal code. Nothing concerning here.";
-                } else if (score >= 10) {
-                    rating = "Questionable";
-                    description = "You make some choices that raise eyebrows. Consider reviewing the code.";
-                } else if (score >= 5) {
-                    rating = "Concerning";
-                    description = "Your urinal choices suggest questionable judgment. Please reconsider your approach.";
-                } else {
-                    rating = "Psychopath";
-                    description = "Your urinal choices show complete disregard for social norms. Seek help immediately.";
-                }
-                
-                document.getElementById('rating').textContent = rating;
-                document.getElementById('rating-description').textContent = description;
-            }
-        }
-
-        function resetQuiz() {
-            score = 0;
-            currentScenario = 1;
-            scenario5Answered = false;
-            scenario5Locked = false;
-            
-            document.getElementById('results').classList.remove('active');
-            document.getElementById('scenario1').classList.add('active');
-            
-            // Reset all selections
-            for (let i = 1; i <= 5; i++) {
-                clearSelections(i);
-            }
-            
-            // Reset the disabled states
-            const urinal5 = document.getElementById('s5u3');
-            urinal5.classList.remove('disabled');
-            urinal5.onclick = function() { selectUrinal(5, 3, this); };
-            
-            const waitButton = document.getElementById('waitButton');
-            waitButton.classList.remove('disabled');
-            waitButton.disabled = false;
-            
-            // Hide all next buttons
-            for (let i = 1; i <= 5; i++) {
-                const nextButton = document.getElementById(`next${i}`);
-                if (nextButton) {
-                    nextButton.style.display = 'none';
-                }
-            }
-        }
-    </script>
-</body>
-</html>
+            5: {1: 0, 5: 5},       // NEW Scenario 5 scoring (kids urinal vs regular)
+            6: {3: 0, wait: 5}     // Final scenario scoring (was scenario 5 before)
